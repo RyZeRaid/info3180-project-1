@@ -1,3 +1,96 @@
 body {
     padding-top: 5rem;
+    background-color: #f3f4f6;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container_view {
+    max-width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid_view {
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.form-layout {
+    background-color: white;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: white;
+    padding: 20px;
+    width: 50%;
+}
+
+.navbar{
+    background-color: #15b8a7;
+}
+
+#button1 {
+    margin-top: 10px;
+    width: 20%;
+}
+
+.sides {
+    display: flex;
+}
+
+.sizes {
+    width: 100%;
+}
+
+.space {
+    margin-left: 50px;
+}
+
+.size {
+    width: 170%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.card-footer {
+    background-color: #15b8a7;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.bubble {
+    background-color: #5fa4fa;
+    border-radius: 17px;
+    width: fit-content;
+    padding: 4px;
+    color: white;
+}
+
+.flex {
+    display: flex;
+}
+
+#type {
+    background-color: #fabf23;
+    margin-left: 15px;
+}
+
+.btn {
+    background-color: #15b8a7;
+}
+
+#distance {
+    margin-left: 15px;
 }

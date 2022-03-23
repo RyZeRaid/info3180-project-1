@@ -1,9 +1,29 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block main %}
+<h1 class="page-header">Properties</h1>
 {% include 'flash_messages.html' %}
+<div class="container_view">
+    {% for properties in prop %}
+        <div class = "grid_view">
+            <div class="card text-left" style="width: 18rem;">
+                <img class="card-img-top" src="{{ url_for('get_image',filename = properties.photo_name) }}" alt="House" width="250" height="200">
+                <div class="card-body">
+                    <h5 class="card-title">{{ properties.title }}</h5>
+                    <p> <i class="bi bi-geo-alt"></i> {{ properties.location }}</p>
+                    <div class="bubble">
+                        {{ '$'~properties.price }}        
+                    </div>
+                </div>  
 
-
-
-
+                <a href="{{ url_for('propetyid',id=properties.id) }}">
+                    <div class="card-footer">
+                        View Property
+                    </div>
+                </a>
+            </div>
+        </div> 
+    {% endfor %}  
+    
+</div>
 {% endblock %}

@@ -10,54 +10,55 @@
 
     {% include 'flash_messages.html' %}
 
+    <div class="form-layout">
+        <div>
+            {{ form.prop_title.label(class="bold")}}
+            {{ form.prop_title(class="form-control sizes") }}
+        </div>
 
-    <div class="form-group">
-        {{ form.prop_title.label }}
-        {{ form.prop_title(class="form-control") }}
+        <div>
+            {{ form.description.label(class="bold") }}
+            {{ form.description(class="form-control sizes") }}
+        </div>
+
+        <div class="sides">
+            <div>
+                {{ form.num_rooms.label(class="bold") }}
+                {{ form.num_rooms(class="form-control") }}
+            </div>
+
+            <div>
+                {{ form.num_bathrooms.label(class="space bold") }}
+                {{ form.num_bathrooms(class="form-control space") }}
+            </div>
+        </div>
+
+        <div class="sides">
+            <div>
+                {{ form.price.label(class="bold")  }}
+                {{ form.price(class="form-control") }}
+            </div>
+            
+            
+            <div>
+                {{ form.prop_type.label (class="space bold")}}
+                {{ form.prop_type(class="form-control space size") }}
+            </div>
+        </div>
+
+        <div>
+            {{ form.location.label(class="bold")  }}
+            {{ form.location(class="form-control sizes") }}
+        </div>
+
+        <div>
+            {{ form.photo.label(class="bold")  }}
+            {{ form.photo(class="form-control sizes") }}
+        </div>
+
+
+        <button type="submit" name="submit" class="btn btn-primary" id="button1">Add Property</button>
     </div>
-
-    <div class="form-group">
-        {{ form.description.label }}
-        {{ form.description(class="form-control") }}
-    </div>
-
-    <div class="form-group">
-        {{ form.num_rooms.label }}
-        {{ form.num_rooms(class="form-control") }}
-    </div>
-
-    <div class="form-group">
-        {{ form.num_bathrooms.label }}
-        {{ form.num_bathrooms(class="form-control") }}
-    </div>
-
-    <div class="form-group">
-        {{ form.price.label }}
-        {{ form.price(class="form-control") }}
-    </div>
-
-    <div class="form-group">
-        {{ form.prop_type.label }}
-        {{ form.prop_type(class="form-control") }}
-    </div>
-
-    <div class="form-group">
-        {{ form.prop_title.label }}
-        {{ form.prop_title(class="form-control") }}
-    </div>
-
-    <div class="form-group">
-        {{ form.location.label }}
-        {{ form.location(class="form-control") }}
-    </div>
-
-    <div class="form-group">
-        {{ form.photo.label }}
-        {{ form.photo(class="form-control") }}
-    </div>
-
-
-    <button type="submit" name="submit" class="btn btn-primary">Add Property</button>
 
 </form>
 {% endblock %}

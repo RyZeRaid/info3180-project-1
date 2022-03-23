@@ -1,9 +1,40 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block main %}
-{% include 'flash_messages.html' %}
+<h1 class="page-header"></h1>
 
+    
+        <div class="card flex-row" >
 
+            
+            <img class=class="card-img-sm-left" src="{{ url_for('get_image',filename = properties.photo_name) }}" alt="Card image" width="470" height="490">
+              
+            <div class="card-body">
+                <h5  class="card-title"> {{ properties.title }}</h5>
 
+                <br>
 
+                <div class="flex">
+                    <p class="bubble">{{ '$'~properties.price }}</p>
+                    <p class="bubble" id="type">{{ properties.prop_type }}</p>
+                </div>
+                    
+                
+            
+                <p>{{ properties.description }}</p>
+
+                <div class = "d-flex flex-row bd-highlight mb-3">
+                    <div class="flex">
+                         <p><i class="fa-solid fa-bed"></i> {{ properties.num_rooms }} Bedrooms</p> 
+
+                        <p id="distance"><i class="fa-solid fa-bath"></i> {{ properties.num_bathrooms }} Bathrooms</p>
+                    </div>  
+                </div>
+                
+                <p> <i class="bi bi-geo-alt"></i> {{ properties.location }}</p>
+
+                <button class="btn btn-primary">Email Realtor</button>
+            </div>
+        </div>
+      
 {% endblock %}

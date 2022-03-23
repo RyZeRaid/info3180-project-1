@@ -6,10 +6,11 @@ This file creates your application.
 """
 import os
 from app import app, db
-from flask import render_template, request, redirect, url_for, flash
+from flask import render_template, request, redirect, url_for, flash, send_from_directory
 from .forms import Property
 from .models import Properties
 from werkzeug.utils import secure_filename
+from operator import length_hint
 
 
 ###
@@ -56,11 +57,22 @@ def create():
 
 @app.route('/properties')
 def properties():
-    return render_template('properties.html') 
 
-@app.route('/properties/<propertyid>')
-def propetyid():
-    return render_template('property.html')
+    if get_info != []:
+        return render_template('properties.html', prop = get_info()) 
+
+@app.route('/properties/<int:id>')
+def propetyid(id):
+    properties = Properties.query.get_or_404(id)
+    return render_template('property.html', properties = properties)
+
+@app.route("/properties/create/<filename>")
+def get_image(filename):
+    return send_from_directory(os.path.join(os.getcwd(),app.config['UPLOAD_FOLDER']), path=filename)
+
+def get_info():
+    info = Properties.query.all()
+    return info
 
 ###
 # The functions below should be applicable to all Flask apps.
@@ -80,6 +92,8 @@ def send_text_file(file_name):
     """Send your static text file."""
     file_dot_text = file_name + '.txt'
     return app.send_static_file(file_dot_text)
+
+
 
 
 @app.after_request
